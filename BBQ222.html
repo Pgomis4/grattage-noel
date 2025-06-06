@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscription Barbecue – 27 juin 2025</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Styles généraux ===== */
+    body {
+      background: linear-gradient(135deg, #fff6e5 0%, #ffe3c3 100%);
+      font-family: 'Quicksand', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 420px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 32px 24px 24px 24px;
+      position: relative;
+      animation: fadeInDown 0.8s ease-out;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    /* ===== En-tête ===== */
+    .header-emoji { font-size: 2.5rem; text-align: center; display: block; margin-bottom: 8px; }
+    h2 {
+      color: #fd7c2e;
+      margin: 0;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .date-line {
+      text-align: center;
+      color: #d35400;
+      font-size: 1rem;
+      margin: 6px 0 20px 0;
+    }
+    /* ===== Styles des champs (input + select) ===== */
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      height: 44px;
+      padding: 0 14px;
+      font-size: 1rem;
+      color: #333;
+      border: 2px solid #fd7c2e;
+      border-radius: 8px;
+      background: #fff;
+      appearance: none;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+    }
+    select {
+      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0l5 6 5-6z" fill="%23fd7c2e"/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 10px 6px;
+      padding-right: 36px;
+    }
+    input:focus,
+    select:focus {
+      border-color: #e74c3c;
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+    }
+    /* ===== Labels et conteneurs de groupe ===== */
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #b24e13;
+      font-size: 0.95rem;
+    }
+    /* ===== Bouton ===== */
+    button {
+      width: 100%;
+      height: 46px;
+      background: linear-gradient(90deg, #fd7c2e 65%, #ff9a4d 100%);
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 3px 10px rgba(253, 124, 46, 0.3);
+    }
+    button:hover {
+      background: linear-gradient(90deg, #e74c3c 60%, #ffbe6b 100%);
+      transform: scale(1.02);
+    }
+    /* ===== Message de remerciement ===== */
+    #merciMessage {
+      display: none;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #27ae60;
+      margin-top: 24px;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    /* ===== Décorations ===== */
+    .bbq-deco-left {
+      position: absolute;
+      top: 20px;
+      left: 12px;
+      font-size: 2em;
+      color: #fd7c2e33;
+    }
+    .bbq-deco-right {
+      position: absolute;
+      top: 20px;
+      right: 12px;
+      font-size: 2em;
+      color: #fd7c2e33;
+    }
+    /* ===== Info de contact ===== */
+    .contact-info {
+      margin-top: 22px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #b24e13;
+    }
+    .contact-info span {
+      font-size: 1.2rem;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Décorations en transparence -->
+    <div class="bbq-deco-left">🍔</div>
+    <div class="bbq-deco-right">🌭</div>
+
+    <!-- En-tête avec émojis -->
+    <span class="header-emoji">🔥🍖</span>
+    <h2>Barbecue du Centre Social</h2>
+    <div class="date-line">Vendredi 27 juin 2025 • 19h – 21h</div>
+
+    <!-- Formulaire (ligne <form> mise à jour pour Formspree) -->
+    <form action="https://formspree.io/f/mwpbvlqd" method="POST">
+      <!-- Vous pouvez conserver ce champ caché pour désactiver le captcha si besoin -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Nom -->
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+      </div>
+
+      <!-- Participation -->
+      <div class="form-group">
+        <label for="participation">Participerez-vous&nbsp;?</label>
+        <select id="participation" name="participation" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="oui">Oui, on vient avec plaisir&nbsp;!</option>
+          <option value="non">Non, malheureusement...</option>
+        </select>
+      </div>
+
+      <!-- Nombre de personnes -->
+      <div class="form-group" id="nbPersonnesGroup" style="display:none;">
+        <label for="nbPersonnes">Nombre de personnes prévues</label>
+        <input type="number" id="nbPersonnes" name="nbPersonnes" min="1" placeholder="Incluez-vous !">
+      </div>
+
+      <!-- Apport (facultatif) -->
+      <div class="form-group">
+        <label for="apport">Vous apportez quelque chose ? (facultatif)</label>
+        <input type="text" id="apport" name="apport" placeholder="Ex : salade, chips, boisson…">
+      </div>
+
+      <!-- Bouton -->
+      <button type="submit">Envoyer la réponse</button>
+    </form>
+
+    <!-- Message de remerciement (s’il est utilisé, voir remarque plus bas) -->
+    <div id="merciMessage">
+      <span style="font-size:2em;">🥳</span><br>
+      Merci pour votre réponse, à très bientôt autour du barbecue !
+    </div>
+
+    <!-- Info contact -->
+    <div class="contact-info">
+      <span>📞</span>Besoin d’infos ? Centre social : <strong>01 49 92 66 20</strong>
+    </div>
+  </div>
+
+  <!-- Script pour afficher/masquer le champ “nombre de personnes” -->
+  <script>
+    const participation = document.getElementById('participation');
+    const nbPersonnesGroup = document.getElementById('nbPersonnesGroup');
+    const nbPersonnes = document.getElementById('nbPersonnes');
+
+    participation.addEventListener('change', function() {
+      if (this.value === 'oui') {
+        nbPersonnesGroup.style.display = 'block';
+        nbPersonnes.required = true;
+        nbPersonnesGroup.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, fill: 'forwards' });
+      } else {
+        nbPersonnesGroup.style.display = 'none';
+        nbPersonnes.value = '';
+        nbPersonnes.required = false;
+      }
+    });
+
+    /* 
+      REMARQUE IMPORTANTE :
+      - Dans votre code d’origine, vous aviez un `onsubmit` qui faisait `e.preventDefault()`
+        pour afficher un message sans recharger la page.
+      - Si vous gardez ce bloc JavaScript (et ce preventDefault), le formulaire ne sera pas
+        envoyé à Formspree : les données n’arriveront jamais dans votre tableau Formspree.
+      - Pour que les réponses remontent bien dans Formspree, il faut **supprimer** tout
+        ce qui fait `e.preventDefault()` sur la soumission. Ici je l’ai retiré pour que
+        le POST se fasse normalement. Si vous souhaitez à la fois envoyer à Formspree
+        et afficher un message “Merci” en AJAX, il faudrait un traitement JavaScript plus
+        avancé (fetch vers Formspree, etc.), mais ce n’est pas nécessaire pour démarrer.
+
+      Si vous tenez à conserver un message de remerciement personnalisé sans quitter la page,
+      il faudra remplacer le form.submit() par un appel AJAX. Mais si vous acceptez que
+      l’utilisateur soit redirigé vers la page “Merci” ou qu’il voie la confirmation standard
+      de Formspree, vous pouvez simplement laisser le form envoyer le POST sans JavaScript qui
+      bloque la soumission.
+    */
+  </script>
+</body>
+</html>
